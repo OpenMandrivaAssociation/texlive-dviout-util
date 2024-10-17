@@ -3,7 +3,7 @@ Version:	66186
 Release:	1
 Summary:	DVI output utilities
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/dviout-util
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/dviout-util
 License:	distributable
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.doc.r%{version}.tar.xz
