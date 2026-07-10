@@ -1,33 +1,22 @@
-Name:		texlive-dviout-util
-Version:	66186
+%global tl_name dviout-util
+%global tl_revision 66186
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
-Summary:	DVI output utilities
+Summary:	TeX Live package dviout-util
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/dviout-util
-License:	distributable
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/pkg/dviout-util
+License:	LPPL
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(dviout-util.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
+TeX Live package dviout-util.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_datadir}
-cp -a texmf-dist %{buildroot}%{_datadir}
-
-%files
-%doc %{_texmfdistdir}/doc/man/man1/*
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
