@@ -12,8 +12,6 @@ Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.r%{t
 Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/dviout-util.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
 BuildSystem:	texlive
-BuildRequires:	texlive-tlpkg
-%texlive_base_requires
 Requires:	texlive(dviout-util.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
 
